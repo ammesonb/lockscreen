@@ -1,11 +1,16 @@
 #include <stdio.h>
 #include <time.h>
+#ifdef _WIN64
+#elif _WIN32
+#elif __APPLE__
+#elif __linux || __unix || __posix
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/Xos.h>
 #include <X11/Xatom.h>
 #include <X11/keysym.h>
 #include <X11/extensions/scrnsaver.h>
+#endif
 
 void printIndex(char* string, int index) {
     //printf("%c\n", string[index]);
